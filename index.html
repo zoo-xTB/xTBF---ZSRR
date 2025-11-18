@@ -1,0 +1,255 @@
+<!--
+  Skyrbx-style landing + shop — versi "semirip mungkin"
+  Instruksi:
+  - Ganti semua placeholder IMAGE_* dengan link gambar asli atau file lokal.
+  - Ganti WA_NUMBER pada semua tautan WhatsApp dengan nomor-mu (format internasional tanpa tanda +, contoh: 6281234567890).
+  - Untuk sistem pembayaran & otomisasi, minta aku tambahkan integrasi (QRIS / webhook / form-to-WA).
+
+  Catatan legal: ini adalah template terinspirasi desain skyrbx.com untuk tujuan pembelajaran/prototyping.
+--><!doctype html>
+
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>xTBFish — Official Store</title>
+  <meta name="description" content="Store Dengan Penjualan Ikan Fish It Termurah, Aman & Lengkap" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#030416; --card:#0b1220; --accent:#00e6a8; --accent-2:#5cc3ff; --muted:#9fb0c9; --glass: rgba(255,255,255,0.03);
+      --maxw:1180px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#eaf6ff;background:radial-gradient(1200px 400px at 10% 10%, rgba(96,165,250,0.06), transparent), linear-gradient(180deg,#020617 0%, #041127 60%)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px}/* NAV */
+header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.35));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.02)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;gap:12px;align-items:center}
+.brand .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#021;box-shadow:0 10px 30px rgba(2,6,23,0.7)}
+nav ul{display:flex;gap:16px;align-items:center;margin:0;padding:0;list-style:none}
+.btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#022;padding:10px 14px;border-radius:12px;font-weight:700}
+.ghost{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);font-weight:600}
+
+/* HERO */
+.hero{display:flex;gap:36px;align-items:center;padding:56px 0}
+.hero-left{flex:1}
+.eyebrow{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700;margin-bottom:16px}
+h1{font-size:44px;margin:0 0 12px;line-height:1.02}
+p.lead{color:var(--muted);margin:0 0 20px;max-width:640px}
+.hero-cta{display:flex;gap:12px}
+
+.hero-right{width:460px;max-width:46%;}
+.showcase{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:16px;box-shadow:0 12px 40px rgba(2,6,23,0.7);border:1px solid rgba(255,255,255,0.03)}
+.showcase img{width:100%;height:260px;object-fit:cover;border-radius:10px}
+
+/* PRODUCTS */
+.section-title{display:flex;justify-content:space-between;align-items:end}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column}
+.product-img{height:160px;border-radius:10px;background:#081226;display:block;margin-bottom:10px;overflow:hidden}
+.meta{display:flex;justify-content:space-between;align-items:center}
+.price{font-weight:800}
+.badge{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:6px 8px;border-radius:8px;font-weight:700;color:#022}
+
+/* HERO FEATURES */
+.features{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.feature{background:var(--glass);padding:12px;border-radius:12px;min-width:220px}
+
+/* FOOTER */
+footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:44px}
+
+/* responsive */
+@media (max-width:980px){
+  .hero{flex-direction:column;padding:28px 0}
+  .hero-right{max-width:100%;width:100%}
+  .section-title{flex-direction:column;align-items:flex-start;gap:12px}
+}
+@media (max-width:560px){
+  h1{font-size:28px}
+  .brand .logo{width:40px;height:40px}
+  nav ul{display:none}
+}
+
+/* tiny util */
+.muted{color:var(--muted);font-size:13px}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">xTB</div>
+        <div>
+          <div style="font-weight:800">xTBFish</div>
+          <div style="font-size:12px;color:var(--muted)">Official Fish Store</div>
+        </div>
+      </div><nav>
+    <ul>
+      <li><a href="#products" class="ghost">Produk</a></li>
+      <li><a href="#how" class="ghost">Cara Order</a></li>
+      <li><a href="#faq" class="ghost">FAQ</a></li>
+      <li><a class="btn" id="wh-btn" href="https://wa.me/628998879408?text=Halo%20saya%20mau%20order">Order via WhatsApp</a></li>
+    </ul>
+  </nav>
+</div>
+
+  </header>  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="eyebrow">Official • Instant Delivery</div>
+        <h1>Store Dengan Penjualan Ikan Fish It Termurah, Aman & Lengkap</h1>
+        <p class="lead">Menjual Kebutuhan Fish It Dengan Minim Biaya, dan Bebas Pajak.</p><div class="hero-cta">
+      <a class="btn" href="#products">Lihat Produk</a>
+      <a class="ghost" href="#how">Pelajari Cara Order</a>
+    </div>
+
+    <div class="features" aria-hidden>
+      <div class="feature"><strong>Instant Delivery</strong><div class="muted">Dikirim otomatis ke WhatsApp</div></div>
+      <div class="feature"><strong>Pembayaran Lengkap</strong><div class="muted">QRIS, e-wallet, & transfer</div></div>
+      <div class="feature"><strong>Support 24/7</strong><div class="muted">Respon cepat (selama jam kerja)</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="showcase">
+      <!-- REPLACE IMAGE_SHOWCASE -->
+      <img src="zoo4.png" alt="random sc">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+        <div>
+          <div style="font-weight:800">SC TUMBALl</div>
+          <div class="muted" style="font-size:13px">Hanya Menjual Ikan Tumbal Untuk Double Enchant</div>
+        </div>
+        <div style="text-align:right">
+            <a class="btn" href="qris_checkout_index.html">Order</a>
+          <div class="price" style="margin-top:10px">
+          <div class="price">Rp8.000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products" style="margin-top:18px">
+  <div class="section-title">
+    <div>
+      <h2 style="margin:0">Produk Populer</h2>
+      <div class="muted">Pilih produk, kemudian klik Order untuk menghubungi admin via WhatsApp.</div>
+    </div>
+    <div>
+      <a class="ghost" href="#">Lihat semua</a>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- Product 1 -->
+    <article class="card">
+      <div class="product-img"><img src="zoo.png" alt="mosasaurus shark" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="font-weight:800">MOSASAURUS SHARK</div>
+      <div class="muted" style="margin-top:6px">-</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+        <div class="price">Rp 23.000</div>
+        <div style="display:flex;gap:8px">
+          <a class="ghost" href="#">Detail</a>
+          <a class="btn" href="https://wa.me/628998879408?text=Halo%20saya%20mau%20beli%2Mosasaurus%20Shark%20A">Order</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Product 2 -->
+    <article class="card">
+      <div class="product-img"><img src="zoo1.png" alt="ghost worm" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="font-weight:800">GHOST WORM</div>
+      <div class="muted" style="margin-top:6px">-</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+        <div class="price">Rp 23.000</div>
+        <div style="display:flex;gap:8px">
+          <a class="ghost" href="#">Detail</a>
+          <a class="btn" href="https://wa.me/628998879408?text=Halo%20saya%20mau%20beli%2Ghost%20Worm%20A">Order</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Product 3 -->
+    <article class="card">
+      <div class="product-img"><img src="zoo2.png" alt="skeleton narwhal" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="font-weight:800">SKELETON NARWHAL</div>
+      <div class="muted" style="margin-top:6px">-</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+        <div class="price">Rp 18.000</div>
+        <div style="display:flex;gap:8px">
+          <a class="ghost" href="#">Detail</a>
+          <a class="btn" href="https://wa.me/628998879408?text=Halo%20saya%20mau%20beli%2Skeleton%20Narwhal%20A">Order</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Product 4 -->
+    <article class="card">
+      <div class="product-img"><img src="zoo3.png" alt="raksasa lochness" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="font-weight:800">MONSTER LOCHNESS</div>
+      <div class="muted" style="margin-top:6px">Tambahan kecil untuk kenyamanan.</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+        <div class="price">Rp 50.000</div>
+        <div style="display:flex;gap:8px">
+          <a class="ghost" href="#">Detail</a>
+          <a class="btn" href="https://wa.me/628998879408?text=Halo%20saya%20mau%20beli%2Lochness%20Monster%20A">Order</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="how" style="margin-top:36px">
+  <h2>Cara Order</h2>
+  <ol class="muted">
+    <li>Pilih produk lalu klik <strong>Order</strong>.</li>
+    <li>Kirim bukti pembayaran (jika ada) dan info akun ke admin WA.</li>
+    <li>Admin akan memproses & mengirimkan Item/Ikan.</li>
+  </ol>
+</section>
+
+<section id="faq" style="margin-top:28px">
+  <h2>FAQ</h2>
+  <details style="background:var(--glass);padding:12px;border-radius:10px;margin-top:8px"><summary style="font-weight:700">Apakah produk ini legal?</summary><div class="muted" style="margin-top:8px">Kami hanya menyediakan Ikan Di Fish It.</div></details>
+  <details style="background:var(--glass);padding:12px;border-radius:10px;margin-top:8px"><summary style="font-weight:700">Metode pembayaran apa saja?</summary><div class="muted" style="margin-top:8px">QRIS, e-wallet (OVO/GoPay/DANA), dan transfer bank.</div></details>
+</section>
+
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+    <div>
+      <div style="font-weight:800">xTBFish</div>
+      <div class="muted">© <span id="year"></span> — Official Store</div>
+    </div>
+    <div class="muted">Contact: <a href="https://wa.me628998879408?text=Halo%20saya%20mau%20tanya" style="color:inherit">WhatsApp</a></div>
+  </div>
+</footer>
+
+  </main>  <script>
+    // helper
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        const t = document.querySelector(this.getAttribute('href'));
+        if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    });
+
+    // replace placeholder images with default placeholders if not provided
+    (function(){
+      const imgs = document.querySelectorAll('img');
+      imgs.forEach(img=>{
+        if(!img.src || img.src.trim()==="" || img.src.includes('IMAGE_')){
+          img.src = 'https://via.placeholder.com/800x500?text=Image+Placeholder';
+        }
+      })
+    })();
+  </script></body>
+</html>
